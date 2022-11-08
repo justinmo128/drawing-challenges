@@ -9,7 +9,7 @@ let x = 0,
     y = 0,
     w = 0,
     h = 0,
-    numRungs = 0;
+    numRings = 0;
 
 // Draw Function
 window.addEventListener("load", draw);
@@ -23,11 +23,12 @@ function draw() {
 
     ctx.lineWidth = 3;
     ctx.strokeStyle = "red";
+    ringSpacing = r / (numRings + 1);
     for (let i = 0; i < numRings; i++) {
         ctx.beginPath();
         ctx.arc(x, y, r, 0, 2 * Math.PI);
         ctx.stroke();
-        r -= (r / numRings)
+        r -= (ringSpacing)
     }
 
     requestAnimationFrame(draw);
